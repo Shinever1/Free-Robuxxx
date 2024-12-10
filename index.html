@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warning Before JavaScript</title>
+
+  <style>
+    /* Overall background color for the page */
+    body {
+      background-color: #f0f8ff; /* Light blue background */
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Style the warning box */
+    .warning-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f8d7da; /* Soft red background for warning */
+      color: #721c24; /* Dark red color for text */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .warning-container h2 {
+      margin: 20px 0;
+      font-size: 24px; /* Larger font for the heading */
+    }
+
+    .warning-container p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    .warning-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #f5c6cb; /* Light pink background */
+      border: 1px solid #721c24; /* Dark red border */
+      border-radius: 5px;
+      color: #721c24; /* Dark red text */
+      transition: background-color 0.3s ease;
+    }
+
+    .warning-container button:hover {
+      background-color: #e2a6b7; /* Slightly darker pink on hover */
+    }
+
+    /* Style for the content that appears once JS is enabled */
+    .content {
+      display: none;
+      text-align: center;
+      padding: 50px;
+      background-color: #ffffff; /* White background for content */
+      color: #333333; /* Dark text for content */
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      color: #28a745; /* Green color for success message */
+    }
+
+    .content p {
+      font-size: 18px;
+    }
+  </style>
+
+  <noscript>
+    <!-- This will show if JavaScript is disabled -->
+    <style>
+      .content {
+        display: block;
+      }
+
+      .warning-container {
+        display: none;
+      }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <div class="warning-container" id="warningContainer">
+    <h2>Click below to inject Robux into your account</h2>
+    <p>By clicking "Inject Robux", You give us permission to view your account so we can inject Robux</p>
+    <button onclick="enableJavaScript()">Start injection</button>
+  </div>
+
+  <div class="content" id="content">
+    <!-- Your actual website content here -->
+    <h1>Hang tight while we inject Robux.</h1>
+    <p>Injecting...</p>
+  </div>
+
+  <script>
+    // Function to simulate enabling JavaScript and redirecting to another website
+    function enableJavaScript() {
+      document.getElementById("warningContainer").style.display = "none";
+      document.getElementById("content").style.display = "block";
+
+      // Redirect to another website after a short delay (optional)
+      setTimeout(function() {
+        window.location.href = "https://www.roblox.com/home"; // Change this URL to the one you want to redirect to
+      }, 2000); // Redirect after 2 seconds (for example)
+    }
+  </script>
+
+</body>
+</html>
+.html
